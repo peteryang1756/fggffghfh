@@ -1,4 +1,4 @@
-import { Suspense } from "react"
+import { Suspense } from "react" 
 import { Navbar } from "flowbite-react";
 import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"

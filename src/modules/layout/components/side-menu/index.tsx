@@ -1,100 +1,131 @@
 "use client"
-
-import { Popover, Transition } from "@headlessui/react"
-import { ArrowRightMini, XMark } from "@medusajs/icons"
-import { Region } from "@medusajs/medusa"
-import { Text, clx, useToggleState } from "@medusajs/ui"
-import { Fragment } from "react"
-
+import { Fragment, useState, Suspense } from 'react'
+import Link from 'next/link'
+import { DocSearch } from '@docsearch/react'
+import { Dialog } from '@headlessui/react'
+import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CountrySelect from "../country-select"
+import CartButton from "@modules/layout/components/cart-button"
+import SideMenu from "@modules/layout/components/side-menu"
 
-const SideMenuItems = {
-  首頁: "/",
-  購物: "/store",
-  搜尋: "/search",
-  帳號: "/account",
-  購物車: "/cart",
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-const SideMenu = ({ regions }: { regions: Region[] | null }) => {
-  const toggleState = useToggleState()
+export default async function Head() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const regions = await listRegions().then((regions) => regions)
 
   return (
-    <div className="h-full">
-      <div className="flex items-center h-full">
-        <Popover className="h-full flex">
-          {({ open, close }) => (
-            <>
-              <div className="relative flex h-full">
-                <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base">
-                  菜單
-                </Popover.Button>
-              </div>
-
-              <Transition
-                show={open}
-                as={Fragment}
-                enter="transition ease-out duration-150"
-                enterFrom="opacity-0"
-                enterTo="opacity-100 backdrop-blur-2xl"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 backdrop-blur-2xl"
-                leaveTo="opacity-0"
-              >
-                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
-                  <div data-testid="nav-menu-popup" className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6">
-                    <div className="flex justify-end" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close}>
-                        <XMark />
-                      </button>
-                    </div>
-                    <ul className="flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
-                        return (
-                          <li key={name}>
-                            <LocalizedClientLink
-                              href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
-                              onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
-                            >
-                              {name}
-                            </LocalizedClientLink>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                    <div className="flex flex-col gap-y-6">
-                      <div
-                        className="flex justify-between"
-                        onMouseEnter={toggleState.open}
-                        onMouseLeave={toggleState.close}
-                      >
-                        {regions && (
-                          <p>🇹🇼中華民國</p>
-                        )}
-                        <ArrowRightMini
-                          className={clx(
-                            "transition-transform duration-150",
-                            toggleState.state ? "-rotate-90" : ""
-                          )}
-                        />
-                      </div>
-                      <Text className="flex justify-between txt-compact-small">
-                        Copyright © 2023 雙龍體育購物 All rights
-                        reserved.
-                      </Text>
-                    </div>
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </>
+    <header className="sticky top-0 inset-x-0 z-50 group bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8 h-16" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <div className="h-full">
+            
+          </div>
+        </div>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">打開菜單</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div className="flex items-center h-full">
+          <LocalizedClientLink
+            href="/"
+            className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+            data-testid="nav-store-link"
+          >
+            <img className="h-8 w-auto" src="https://imgur.com/m3GZIgA.jpeg" alt="雙龍體育" />
+          </LocalizedClientLink>
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-6">
+          {process.env.FEATURE_SEARCH_ENABLED && (
+            <LocalizedClientLink
+              className="hover:text-ui-fg-base"
+              href="/search"
+              scroll={false}
+              data-testid="nav-search-link"
+            >
+              搜尋
+            </LocalizedClientLink>
           )}
-        </Popover>
-      </div>
-    </div>
+          <LocalizedClientLink
+            className="hover:text-ui-fg-base"
+            href="/account"
+            data-testid="nav-account-link"
+          >
+            帳號
+          </LocalizedClientLink>
+          <Suspense
+            fallback={
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base flex gap-2"
+                href="/cart"
+                data-testid="nav-cart-link"
+              >
+                購物車 (0)
+              </LocalizedClientLink>
+            }
+          >
+            <CartButton />
+          </Suspense>
+          
+        </div>
+      </nav>
+      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className="fixed inset-0 z-10" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <LocalizedClientLink href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">雙龍體育</span>
+              <img
+                className="h-8 w-auto"
+                src="https://imgur.com/m3GZIgA.jpeg"
+                alt=""
+              />
+            </LocalizedClientLink>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {process.env.FEATURE_SEARCH_ENABLED && (
+                  <LocalizedClientLink
+                    href="/search"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    scroll={false}
+                    data-testid="nav-search-link"
+                  >
+                    搜尋
+                  </LocalizedClientLink>
+                )}
+                <LocalizedClientLink
+                  href="/account"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  data-testid="nav-account-link"
+                >
+                  帳號
+                </LocalizedClientLink>
+              </div>
+             
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+    </header>
   )
 }
-
-export default SideMenu

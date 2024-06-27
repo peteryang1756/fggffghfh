@@ -7,7 +7,6 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button";
 
 export default async function Nav() {
-  const regions = await listRegions().then((regions) => regions);
 
   return (
     <Navbar fluid rounded>

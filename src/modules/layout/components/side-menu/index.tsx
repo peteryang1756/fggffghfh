@@ -81,7 +81,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                           )}
                         />
                       </div>
-                      <p className="flex justify-between txt-compact-small text-black">
+                      <p>
                       </p>
                     </div>
                   </div>

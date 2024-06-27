@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { Popover, Transition } from "@headlessui/react"
-import { ArrowRightMini, XMark, ListBullet, BarsThree } from "@medusajs/icons"
-import { Region } from "@medusajs/medusa"
-import { Text, clx, useToggleState } from "@medusajs/ui"
-import { Fragment } from "react"
+import { Popover, Transition } from "@headlessui/react";
+import { ArrowRightMini, XMark, ListBullet, BarsThree } from "@medusajs/icons";
+import { Region } from "@medusajs/medusa";
+import { Text, clx, useToggleState } from "@medusajs/ui";
+import { Fragment } from "react";
 
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CountrySelect from "../country-select"
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import CountrySelect from "../country-select";
 
 const SideMenuItems = {
   首頁: "/",
@@ -15,19 +15,22 @@ const SideMenuItems = {
   搜尋: "/search",
   帳號: "/account",
   購物車: "/cart",
-}
+};
 
 const SideMenu = ({ regions }: { regions: Region[] | null }) => {
-  const toggleState = useToggleState()
+  const toggleState = useToggleState();
 
   return (
-     <div className="h-full">
+    <div className="h-full">
       <div className="flex items-center h-full">
         <Popover className="h-full flex">
           {({ open, close }) => (
             <>
               <div className="relative flex h-full">
-                <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-black">
+                <Popover.Button
+                  data-testid="nav-menu-button"
+                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-black"
+                >
                   <BarsThree />
                 </Popover.Button>
               </div>
@@ -45,45 +48,28 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                 <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-black m-2 backdrop-blur-2xl">
                   <div data-testid="nav-menu-popup" className="flex flex-col h-full bg-white rounded-rounded justify-between p-6">
                     <div className="flex justify-end" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close} className="text-black">
+                      <button
+                        data-testid="close-menu-button"
+                        onClick={close}
+                        className="text-black"
+                      >
                         <XMark />
                       </button>
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
-                        return (
-                          <li key={name}>
-                            <LocalizedClientLink
-                              href={href}
-                              className="text-3xl leading-10 text-black hover:text-gray-700"
-                              onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
-                            >
-                              {name}
-                            </LocalizedClientLink>
-                          </li>
-                        )
-                      })}
+                      {Object.entries(SideMenuItems).map(([name, href]) => (
+                        <li key={name}>
+                          <LocalizedClientLink
+                            href={href}
+                            className="text-3xl leading-10 text-black hover:text-gray-700"
+                            onClick={close}
+                            data-testid={`${name.toLowerCase()}-link`}
+                          >
+                            {name}
+                          </LocalizedClientLink>
+                        </li>
+                      ))}
                     </ul>
-                    <div className="flex flex-col gap-y-6">
-                      <div
-                        className="flex justify-between text-black"
-                        onMouseEnter={toggleState.open}
-                        onMouseLeave={toggleState.close}
-                      >
-                        {regions && (
-                          
-                        )}
-                        <ArrowRightMini
-                          className={clx(
-                            "transition-transform duration-150 text-black",
-                            toggleState.state ? "-rotate-90" : ""
-                          )}
-                        />
-                      </div>
-
-
-                    </div>
                   </div>
                 </Popover.Panel>
               </Transition>
@@ -92,7 +78,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
         </Popover>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideMenu
+export default SideMenu;

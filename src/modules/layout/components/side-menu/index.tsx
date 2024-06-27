@@ -1,7 +1,7 @@
 "use client"
 
 import { Popover, Transition } from "@headlessui/react"
-import { ArrowRightMini, XMark, ListBullet } from "@medusajs/icons"
+import { ArrowRightMini, XMark, ListBullet, BarsThree } from "@medusajs/icons"
 import { Region } from "@medusajs/medusa"
 import { Text, clx, useToggleState } from "@medusajs/ui"
 import { Fragment } from "react"
@@ -28,9 +28,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
             <>
               <div className="relative flex h-full">
                 <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-black">
-                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-<path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
-</svg>
+                  <BarsThree />
                 </Popover.Button>
               </div>
 
@@ -74,7 +72,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         onMouseLeave={toggleState.close}
                       >
                         {regions && (
-                          <p>🇹🇼中華民國</p>
+                          
                         )}
                         <ArrowRightMini
                           className={clx(
@@ -83,10 +81,8 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                           )}
                         />
                       </div>
-                      <Text className="flex justify-between txt-compact-small text-black">
-                        Copyright © 2023 雙龍體育購物 All rights
-                        reserved.
-                      </Text>
+
+
                     </div>
                   </div>
                 </Popover.Panel>

@@ -19,19 +19,7 @@ export default async function Nav() {
       
       </Navbar.Brand></LocalizedClientLink>
       <div className="flex md:order-2">
-        <Suspense
-              fallback={
-                <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
-                  href="/cart"
-                  data-testid="nav-cart-link"
-                >
-                  購物車 (0)
-                </LocalizedClientLink>
-              }
-            >
-              <CartButton />
-            </Suspense>
+        
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

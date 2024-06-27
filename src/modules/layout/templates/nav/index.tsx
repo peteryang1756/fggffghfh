@@ -6,7 +6,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button";
 import { Button, Navbar } from "flowbite-react";
 
-export function Component() {
+export default async function Nav() {
   return (
     <Navbar fluid rounded>
       <LocalizedClientLink

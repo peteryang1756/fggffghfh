@@ -2,42 +2,48 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
-import { Navbar } from "flowbite-react";
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
 import CartButton from "@modules/layout/components/cart-button";
+import { Button, Navbar } from "flowbite-react";
 
-export default async function Nav() {
-
+export function Component() {
   return (
     <Navbar fluid rounded>
-      <Navbar.Brand as={Link} href="/">
-        <img src="https://imgur.com/m3GZIgA.jpeg" className="mr-3 h-6 sm:h-9" alt="Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Your Brand</span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        
-        <Navbar.Link as={Link} href="/" active>
-          Home
-        </Navbar.Link>
-        {process.env.FEATURE_SEARCH_ENABLED && (
-          <Navbar.Link as={Link} href="/search" scroll={false}>
-            搜尋
-          </Navbar.Link>
-        )}
-        <Navbar.Link as={Link} href="/account">
-          帳號
-        </Navbar.Link>
+      <LocalizedClientLink
+              href="/"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              data-testid="nav-store-link"
+            >
+      <Navbar.Brand>
+        <img src="https://imgur.com/m3GZIgA.jpeg" className="mr-3 h-6 sm:h-9" alt="雙龍體育購物 Logo" />
+      
+      </Navbar.Brand></LocalizedClientLink>
+      <div className="flex md:order-2">
         <Suspense
-          fallback={
-            <Navbar.Link as={Link} href="/cart">
-              購物車 (0)
-            </Navbar.Link>
-          }
-        >
-          <CartButton />
-        </Suspense>
+              fallback={
+                <LocalizedClientLink
+                  className="hover:text-ui-fg-base flex gap-2"
+                  href="/cart"
+                  data-testid="nav-cart-link"
+                >
+                  購物車 (0)
+                </LocalizedClientLink>
+              }
+            >
+              <CartButton />
+            </Suspense>
+        <Navbar.Toggle />
+      </div>
+      <Navbar.Collapse>
+        <Navbar.Link href="/" active>
+          首頁
+        </Navbar.Link>
+        <Navbar.Link href="/store">購物</Navbar.Link>
+        <Navbar.Link href="/account">帳號</Navbar.Link>
+        <Navbar.Link href="/search">搜尋</Navbar.Link>
+        <Navbar.Link href="/support">聯繫客服</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
 }
+

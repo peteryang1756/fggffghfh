@@ -100,7 +100,7 @@ const CartDropdown = ({
             data-testid="nav-cart-dropdown"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+              <h3 className="text-large-semi">購物車</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
@@ -159,7 +159,7 @@ const CartDropdown = ({
                             className="mt-1"
                             data-testid="cart-item-remove-button"
                           >
-                            Remove
+                            刪除
                           </DeleteButton>
                         </div>
                       </div>
@@ -189,7 +189,7 @@ const CartDropdown = ({
                       size="large"
                       data-testid="go-to-cart-button"
                     >
-                      Go to cart
+                      結帳
                     </Button>
                   </LocalizedClientLink>
                 </div>
@@ -200,12 +200,12 @@ const CartDropdown = ({
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>你的購物車中是空的❗️.</span>
                   <div>
                     <LocalizedClientLink href="/store">
                       <>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">查看所有產品</span>
+                        <Button onClick={close}>檢視產品</Button>
                       </>
                     </LocalizedClientLink>
                   </div>

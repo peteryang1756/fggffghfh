@@ -5,15 +5,11 @@ import { Dialog } from '@headlessui/react'
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default async function Head() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const regions = await listRegions().then((regions) => regions)
+export default async function Nav() {
 
   return (
+
+  
     <header className="sticky top-0 inset-x-0 z-50 group bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8 h-16" aria-label="Global">
         <div className="flex lg:flex-1">

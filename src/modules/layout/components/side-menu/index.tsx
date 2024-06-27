@@ -3,7 +3,6 @@ import { Fragment, useState, Suspense } from 'react'
 import Link from 'next/link'
 import { DocSearch } from '@docsearch/react'
 import { Dialog } from '@headlessui/react'
-import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"

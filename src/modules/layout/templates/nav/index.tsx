@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Dialog } from '@headlessui/react'
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
-import SideMenu from "@modules/layout/components/side-menu"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

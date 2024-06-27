@@ -27,7 +27,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
           {({ open, close }) => (
             <>
               <div className="relative flex h-full">
-                <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base">
+                <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-black">
                   菜單
                 </Popover.Button>
               </div>
@@ -42,10 +42,10 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                 leaveFrom="opacity-100 backdrop-blur-2xl"
                 leaveTo="opacity-0"
               >
-                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
+                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-black m-2 backdrop-blur-2xl">
                   <div data-testid="nav-menu-popup" className="flex flex-col h-full bg-white rounded-rounded justify-between p-6">
                     <div className="flex justify-end" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close}>
+                      <button data-testid="close-menu-button" onClick={close} className="text-black">
                         <XMark />
                       </button>
                     </div>
@@ -55,7 +55,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                           <li key={name}>
                             <LocalizedClientLink
                               href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                              className="text-3xl leading-10 text-black hover:text-gray-700"
                               onClick={close}
                               data-testid={`${name.toLowerCase()}-link`}
                             >
@@ -67,7 +67,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                     </ul>
                     <div className="flex flex-col gap-y-6">
                       <div
-                        className="flex justify-between"
+                        className="flex justify-between text-black"
                         onMouseEnter={toggleState.open}
                         onMouseLeave={toggleState.close}
                       >
@@ -76,12 +76,12 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         )}
                         <ArrowRightMini
                           className={clx(
-                            "transition-transform duration-150",
+                            "transition-transform duration-150 text-black",
                             toggleState.state ? "-rotate-90" : ""
                           )}
                         />
                       </div>
-                      <Text className="flex justify-between txt-compact-small">
+                      <Text className="flex justify-between txt-compact-small text-black">
                         Copyright © 2023 雙龍體育購物 All rights
                         reserved.
                       </Text>

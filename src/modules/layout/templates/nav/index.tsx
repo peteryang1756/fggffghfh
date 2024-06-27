@@ -9,15 +9,10 @@ import { Button, Navbar } from "flowbite-react";
 export default async function Nav() {
   return (
     <Navbar fluid rounded>
-      <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-              data-testid="nav-store-link"
-            >
       <Navbar.Brand>
         <img src="https://imgur.com/m3GZIgA.jpeg" className="mr-3 h-6 sm:h-9" alt="雙龍體育購物 Logo" />
       
-      </Navbar.Brand></LocalizedClientLink>
+      </Navbar.Brand>
       <div className="flex md:order-2">
         
         <Navbar.Toggle />

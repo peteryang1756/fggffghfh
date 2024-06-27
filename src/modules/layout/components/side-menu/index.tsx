@@ -30,7 +30,9 @@ export default async function Head() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">打開菜單</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+<path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
+</svg>
           </button>
         </div>
         <div className="flex items-center h-full">
@@ -94,7 +96,9 @@ export default async function Head() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+<path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
+</svg>
             </button>
           </div>
           <div className="mt-6 flow-root">

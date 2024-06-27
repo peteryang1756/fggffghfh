@@ -18,13 +18,13 @@ export default async function Nav() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/" active>
+        <Link href="/" active>
           首頁
-        </Navbar.Link>
-        <Navbar.Link href="/store">購物</Navbar.Link>
-        <Navbar.Link href="/account">帳號</Navbar.Link>
-        <Navbar.Link href="/search">搜尋</Navbar.Link>
-        <Navbar.Link href="/support">聯繫客服</Navbar.Link>
+        </Link>
+        <Link href="/store">購物</Link>
+        <Link href="/account">帳號</Link>
+        <Link href="/search">搜尋</Link>
+        <Link href="/support">聯繫客服</Link>
       </Navbar.Collapse>
     </Navbar>
   );

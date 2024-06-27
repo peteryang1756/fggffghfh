@@ -10,7 +10,7 @@ export default async function Nav() {
 
   return (
     <div>
-      <             <SideMenu regions={regions} />
+               <SideMenu regions={regions} />
             
     </div>
   )

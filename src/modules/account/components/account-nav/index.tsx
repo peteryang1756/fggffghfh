@@ -89,6 +89,19 @@ const AccountNav = ({
               </LocalizedClientLink>
             </li>
             <li>
+              <a
+                href="https://ssangyongsports.eu.org/support"
+                className="flex items-center justify-between py-4 border-b border-gray-200 px-8"
+                
+              >
+                <div className="flex items-center gap-x-2">
+                  <Package size={20} />
+                  <span>客服幫助</span>
+                </div>
+                <ChevronDown className="transform -rotate-90" />
+              </a>
+            </li>
+            <li>
               <button
                 type="button"
                 className="flex items-center justify-between py-4 border-b border-gray-200 px-8 w-full"
@@ -149,6 +162,14 @@ const AccountNav = ({
             >
               訂單
             </AccountNavLink>
+          </li>
+          <li>
+            <a
+              href="https://ssangyongsports.eu.org/support"
+            
+            >
+              客服幫助
+            </a>
           </li>
           <li className="text-grey-700">
             <button

@@ -42,7 +42,7 @@ const Login = ({ setCurrentView }: Props) => {
         <ErrorMessage error={message} data-testid="login-error-message" />
         <SubmitButton data-testid="sign-in-button" className="w-full mt-6">登入</SubmitButton>
       </form>
-      <a href="https://dsdds-1adm.onrender.com/store/auth/oauth2/cb" type="button" class="text-white bg-[#2663eb] hover:bg-[#2663eb]/90 focus:ring-4 focus:outline-none focus:ring-[#2663eb]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#2663eb]/55 mr-2 mb-2">
+      <a href="https://dsdds-1adm.onrender.com/store/auth/oauth2/cb" type="button" className="text-white bg-[#2663eb] hover:bg-[#2663eb]/90 focus:ring-4 focus:outline-none focus:ring-[#2663eb]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#2663eb]/55 mr-2 mb-2">
 	Sign in with OAuth2
 </a>
       <span className="text-center text-ui-fg-base text-small-regular mt-6">

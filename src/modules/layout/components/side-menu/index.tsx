@@ -74,12 +74,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         {regions && (
                           <p></p>
                         )}
-                        <ArrowRightMini
-                          className={clx(
-                            "transition-transform duration-150 text-black",
-                            toggleState.state ? "-rotate-90" : ""
-                          )}
-                        />
+                        
                       </div>
                       <p>
                       </p>

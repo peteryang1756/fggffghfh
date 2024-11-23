@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>發生了錯誤</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet">
+<style>
+        @font-face {
+              font-family: 'Openhuninn';
+              src: url('https://ssangyongsports.eu.org/fonts/jf-openhuninn-2.0.ttf') format('truetype');
+            }
+
+        body {
+            font-family: 'Openhuninn', sans-serif;
+        }
+
+        .monospaced {
+            font-family: 'Openhuninn', monospace;
+        }
+    </style>
+<script src="https://chatwoot-6gvm.onrender.com/packs/js/sdk.js" defer="" async=""></script><script src="chrome-extension://bpoadfkcbjbfhfodiogcnhhhpibjhbnh/image/inject.js" id="imt-image-inject" type="text/javascript"></script><style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.immersive-translate-attach-loading::after {
+  content: " ";
+
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2000%, -50%);
+  z-index: 100;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+  .immersive-translate-search-enhancement-en-title {
+    color: #bdc1c6;
+  }
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 2147483647;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 40px 24px 24px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 270px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  position: relative
+}
+
+.immersive-translate-modal .immersive-translate-modal-content-in-input {
+  max-width: 500px;
+}
+.immersive-translate-modal-content-in-input .immersive-translate-modal-body {
+  text-align: left;
+  max-height: unset;
+}
+
+.immersive-translate-modal-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.immersive-translate-modal-body {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  word-break: break-all;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-modal-body {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
+
+.immersive-translate-close {
+  color: #666666;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 16px;
+  margin: 0 8px;
+  padding: 9px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-action-btn {
+  background-color: transparent;
+  color: #EA4C89;
+  border: 1px solid #EA4C89
+}
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}</style></head>
+<body>
+<header class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"><nav class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8" aria-label="Global"><div class="flex lg:flex-1"><a class="-m-1.5 p-1.5" onclick="if (!window.__cfRLUnblockHandlers) return false; history.back()"><span class="sr-only">雙龍體育</span><img class="h-8 w-auto" src="https://ssangyongsports.eu.org/logo.png" alt=""></a></div><div class="flex lg:hidden"></div><div class="hidden lg:flex lg:gap-x-8"></div><div style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0;display:none"></div><div class="hidden lg:flex lg:flex-1 lg:justify-end"></div></nav><div style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0;display:none"></div></header>
+<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900"><div class="flex justify-between px-4 mx-auto max-w-screen-xl "><article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert"><header class="mb-4 lg:mb-6 not-format"><h1 class="mb-10 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+</h1><h1 class="mb-4 text-5xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-5xl dark:text-white">405 Method 錯誤
+</h1><p>抱歉,目前伺服器視乎發生了問題
+請稍後在嘗試或聯繫雙龍體育團隊解決問題</p><p></p><button onclick="if (!window.__cfRLUnblockHandlers) return false; history.back()" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">回上一頁</button>
+    <p>任何技術問題請聯繫tech@ssangyongsports.eu.org
+</p></header></article>
+</div>
+</main>
+<footer class="bg-gray-50 dark:bg-gray-800"></footer>
+<script type="text/javascript">
+      (function(d,t) {
+        var BASE_URL="https://chatwoot-6gvm.onrender.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: '68q4sMgim6ZLZkAGQUmwLSco',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" type="text/javascript"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8a588c900a5f210b&quot;,&quot;version&quot;:&quot;2024.7.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;7c5e8affbb9f419bac826e3b88c16968&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfL4&quot;:true}}}" crossorigin="anonymous"></script>
+<div id="immersive-translate-popup" style="all: initial"></div>
+<style id="cw-widget-styles">
+:root {
+  --b-100: #F2F3F7;
+  --s-700: #37546D;
+}
+
+.woot-widget-holder {
+  box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
+  opacity: 1;
+  will-change: transform, opacity;
+  transform: translateY(0);
+  overflow: hidden !important;
+  position: fixed !important;
+  transition: opacity 0.2s linear, transform 0.25s linear;
+  z-index: 2147483000 !important;
+}
+
+.woot-widget-holder.woot-widget-holder--flat {
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid var(--b-100);
+}
+
+.woot-widget-holder iframe {
+  border: 0;
+  color-scheme: normal;
+  height: 100% !important;
+  width: 100% !important;
+  max-height: 100vh !important;
+}
+
+.woot-widget-holder.has-unread-view {
+  border-radius: 0 !important;
+  min-height: 80px !important;
+  height: auto;
+  bottom: 94px;
+  box-shadow: none !important;
+  border: 0;
+}
+
+.woot-widget-bubble {
+  background: #1f93ff;
+  border-radius: 100px;
+  border-width: 0px;
+  bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .16) !important;
+  cursor: pointer;
+  height: 64px;
+  padding: 0px;
+  position: fixed;
+  user-select: none;
+  width: 64px;
+  z-index: 2147483000 !important;
+}
+
+.woot-widget-bubble.woot-widget-bubble--flat {
+  border-radius: 0;
+}
+
+.woot-widget-holder.woot-widget-holder--flat {
+  bottom: 90px;
+}
+
+.woot-widget-bubble.woot-widget-bubble--flat {
+  height: 56px;
+  width: 56px;
+}
+
+.woot-widget-bubble.woot-widget-bubble--flat svg {
+  margin: 16px;
+}
+
+.woot-widget-bubble.woot-widget-bubble--flat.woot--close::before,
+.woot-widget-bubble.woot-widget-bubble--flat.woot--close::after {
+  left: 28px;
+  top: 16px;
+}
+
+.woot-widget-bubble.unread-notification::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff4040;
+  border-radius: 100%;
+  top: 0px;
+  right: 0px;
+  border: 2px solid #ffffff;
+  transition: background 0.2s ease;
+}
+
+.woot-widget-bubble.woot-widget--expanded {
+  bottom: 24px;
+  display: flex;
+  height: 48px !important;
+  width: auto !important;
+  align-items: center;
+}
+
+.woot-widget-bubble.woot-widget--expanded div {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  padding-right: 20px;
+  width: auto !important;
+}
+
+.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble-color--lighter div{
+  color: var(--s-700);
+}
+
+.woot-widget-bubble.woot-widget--expanded svg {
+  height: 20px;
+  margin: 14px 8px 14px 16px;
+  width: 20px;
+}
+
+.woot-widget-bubble.woot-elements--left {
+  left: 20px;
+}
+
+.woot-widget-bubble.woot-elements--right {
+  right: 20px;
+}
+
+.woot-widget-bubble:hover {
+  background: #1f93ff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .4) !important;
+}
+
+.woot-widget-bubble svg {
+  all: revert;
+  height: 24px;
+  margin: 20px;
+  width: 24px;
+}
+
+.woot-widget-bubble.woot-widget-bubble-color--lighter path{
+  fill: var(--s-700);
+}
+
+@media only screen and (min-width: 667px) {
+  .woot-widget-holder.woot-elements--left {
+    left: 20px;
+ }
+  .woot-widget-holder.woot-elements--right {
+    right: 20px;
+ }
+}
+
+.woot--close:hover {
+  opacity: 1;
+}
+
+.woot--close::before, .woot--close::after {
+  background-color: #fff;
+  content: ' ';
+  display: inline;
+  height: 24px;
+  left: 32px;
+  position: absolute;
+  top: 20px;
+  width: 2px;
+}
+
+.woot-widget-bubble-color--lighter.woot--close::before, .woot-widget-bubble-color--lighter.woot--close::after {
+  background-color: var(--s-700);
+}
+
+.woot--close::before {
+  transform: rotate(45deg);
+}
+
+.woot--close::after {
+  transform: rotate(-45deg);
+}
+
+.woot--hide {
+  bottom: -100vh !important;
+  top: unset !important;
+  opacity: 0;
+  visibility: hidden !important;
+  z-index: -1 !important;
+}
+
+.woot-widget--without-bubble {
+  bottom: 20px !important;
+}
+.woot-widget-holder.woot--hide{
+  transform: translateY(40px);
+}
+.woot-widget-bubble.woot--close {
+  transform: translateX(0px) scale(1) rotate(0deg);
+  transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
+}
+.woot-widget-bubble.woot--close.woot--hide {
+  transform: translateX(8px) scale(.75) rotate(45deg);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
+}
+
+.woot-widget-bubble {
+  transform-origin: center;
+  will-change: transform, opacity;
+  transform: translateX(0) scale(1) rotate(0deg);
+  transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
+}
+.woot-widget-bubble.woot--hide {
+  transform: translateX(8px) scale(.75) rotate(-30deg);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
+}
+
+.woot-widget-bubble.woot-widget--expanded {
+  transform: translateX(0px);
+  transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
+}
+.woot-widget-bubble.woot-widget--expanded.woot--hide {
+  transform: translateX(8px);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
+}
+.woot-widget-bubble.woot-widget-bubble--flat.woot--close {
+  transform: translateX(0px);
+  transition: transform 300ms ease, opacity 10ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
+}
+.woot-widget-bubble.woot-widget-bubble--flat.woot--close.woot--hide {
+  transform: translateX(8px);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
+}
+.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble--flat {
+  transform: translateX(0px);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
+}
+.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble--flat.woot--hide {
+  transform: translateX(8px);
+  transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
+}
+
+@media only screen and (max-width: 667px) {
+  .woot-widget-holder {
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 100%;
+ }
+
+ .woot-widget-holder iframe {
+    min-height: 100% !important;
+  }
+
+
+ .woot-widget-holder.has-unread-view {
+    height: auto;
+    right: 0;
+    width: auto;
+    bottom: 0;
+    top: auto;
+    max-height: 100vh;
+    padding: 0 8px;
+  }
+
+  .woot-widget-holder.has-unread-view iframe {
+    min-height: unset !important;
+  }
+
+ .woot-widget-holder.has-unread-view.woot-elements--left {
+    left: 0;
+  }
+
+  .woot-widget-bubble.woot--close {
+    bottom: 60px;
+    opacity: 0;
+    visibility: hidden !important;
+    z-index: -1 !important;
+  }
+}
+
+@media only screen and (min-width: 667px) {
+  .woot-widget-holder {
+    border-radius: 16px;
+    bottom: 104px;
+    height: calc(90% - 64px - 20px);
+    max-height: 640px !important;
+    min-height: 250px !important;
+    width: 400px !important;
+ }
+}
+
+.woot-hidden {
+  display: none !important;
+}
+</style><div class="woot-widget-holder woot--hide woot-elements--right" id="cw-widget-holder"><iframe src="https://chatwoot-6gvm.onrender.com/widget?website_token=68q4sMgim6ZLZkAGQUmwLSco" allow="camera;microphone;fullscreen;display-capture;picture-in-picture;clipboard-write;" id="chatwoot_live_chat_widget" style="visibility: hidden;"></iframe></div></body><div id="immersive-translate-popup" style="all: initial"></div></html>
